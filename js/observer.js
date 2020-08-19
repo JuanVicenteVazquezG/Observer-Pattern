@@ -3,7 +3,7 @@
 let observer = {
     retrieveOffer: function (callback) {
         if (typeof callback === 'function') {
-            this.subcribers[this.subscribers.length] = callback;
+            this.subscribers[this.subscribers.length] = callback;
         }
     },
     cancelOffer: function (callback) {
@@ -49,7 +49,6 @@ const facebook = {
 // Create publishers
 
 observer.create(udemy);
-console.log(observer);
 observer.create(facebook);
 
 const john = {
@@ -65,5 +64,8 @@ const lucas = {
 };
 
 udemy.retrieveOffer(john.share);
+
 udemy.retrieveOffer(lucas.interested);
+udemy.newCourse();
+udemy.cancelOffer(lucas.interested);
 udemy.newCourse();
