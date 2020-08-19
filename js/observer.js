@@ -48,5 +48,22 @@ const facebook = {
 
 // Create publishers
 
-oberserver.create(udemy);
-oberserver.create(facebook);
+observer.create(udemy);
+console.log(observer);
+observer.create(facebook);
+
+const john = {
+    share: function (offer) {
+        console.log(`Excellent offer! ${offer}`);
+    }
+};
+
+const lucas = {
+    interested: function (offer) {
+        console.log(`I'm interested in the offer! ${offer}`);
+    }
+};
+
+udemy.retrieveOffer(john.share);
+udemy.retrieveOffer(lucas.interested);
+udemy.newCourse();
